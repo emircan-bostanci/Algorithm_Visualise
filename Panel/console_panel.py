@@ -5,14 +5,13 @@ class cursor():
         self.posY = posY
     def input(self,strstd):
         key = strstd.getkey()
-        strstd.addstr(50,25,str(key))
+        strstd.addstr(20,25,str(key))
         if(key == "w" or key == "KEY_UP"):
             self.posY-=1
         if(key == "s" or key == "KEY_DOWN"):
             self.posY += 1
         if(self.posY < 0):
             self.posY = 0
-
 class console_panel():
     blocks = []  
     maxWidth =  55
@@ -25,19 +24,15 @@ class console_panel():
 
         
     def render(self,strstd):
+        #Yeni Dosyaya Tasinacak
         strstd.clear()
         strstd.addstr(self.c.posY,0,"####################################")
-        for i in self.blocks:
-            strstd.addstr(i.y,i.x,str(i.text))
-            if(i.y == self.c.posY and i.hoverable == True):
-                strstd.addstr(50,100,"Clickable")
-        strstd.refresh()
-        strstd.getch()
-
     def draw_new(self,text,hoverable):
-        self.currentlY += 3
+        self.currentlY += 1
         tempBlock = block(0,self.currentlY,text,hoverable)
         self.blocks.append(tempBlock)
+    def on_click(self):
+
    
 class block():
     x = 0
