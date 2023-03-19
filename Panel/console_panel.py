@@ -13,25 +13,18 @@ class cursor():
         if(self.posY < 0):
             self.posY = 0
 class console_panel():
-    blocks = []  
     maxWidth =  55
-    currentlY = 0
     c = cursor(0)
+    blocks = []  
     def run(self,strstd):
        while(True):
         self.render(strstd) 
         self.c.input(strstd)
-
-        
     def render(self,strstd):
         #Yeni Dosyaya Tasinacak
         strstd.clear()
-        strstd.addstr(self.c.posY,0,"####################################")
-    def draw_new(self,text,hoverable):
-        self.currentlY += 1
-        tempBlock = block(0,self.currentlY,text,hoverable)
-        self.blocks.append(tempBlock)
     def on_click(self):
+        print("ONCLICKFUNCTION")
 
    
 class block():

@@ -16,4 +16,4 @@ def run(data):
     return dataset
 
 def info():
-    return("insertion")
+    return("Insertion Sort")
