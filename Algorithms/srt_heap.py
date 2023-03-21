@@ -1,6 +1,6 @@
 import math
 
-
+roads = []
 dataset = []
 def heapify(size,i):
     l = 2 * i +1
@@ -28,6 +28,7 @@ def algorithm():
         dataset[0] = temp
         heap_size -= 1
         heapify(heap_size,0)
+        roads.append(dataset)
 
 def run(data):
     dataset.extend(data)

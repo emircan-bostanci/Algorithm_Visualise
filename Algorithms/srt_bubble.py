@@ -1,5 +1,6 @@
 data= []
 step = 0
+roads = []
 def algorithm(step):
     strList = ""
     if(step != 3):
@@ -9,14 +10,17 @@ def algorithm(step):
                 tmp = data[i]
                 data[i] = data[j]
                 data[j] = tmp
+                roads.append(data)
     for i in range(0,len(data)):
         strList += str(data[i])+" "
     data.reverse()
     return data
-    info()
 def run(dataset):
     data.extend(dataset) 
     algorithm(0)
     return data
+def get_roads(self):
+    return roads
+
 def info():
     return "Bubble Sort"
