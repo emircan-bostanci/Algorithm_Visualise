@@ -20,14 +20,13 @@ class main_window(console_panel.console_panel):
             self.draw_new(label,True)
 
 
-
     def render(self,strstd):
         console_panel.console_panel.render(self,strstd)
         strstd.addstr(self.cursor.posY,0,"####################################")
         for i in self.blocks:
             strstd.addstr(i.y,i.x,str(i.text))
             if(i.y == self.c.posY and i.hoverable == True):
-                strstd.addstr(40,100,"Clickable")
+                strstd.addstr(40,100,i.text + " Display (Click Space)")
         strstd.refresh()
         strstd.getch()
     def on_click(self,func):
