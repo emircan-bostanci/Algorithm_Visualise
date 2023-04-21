@@ -1,15 +1,18 @@
-from Panel import console_panel
-from Panel import main_window 
-from Panel.display_manager import display_manager
+from importer import importer
+from Panel.window import window
 
+algorithm_importer = importer('./Algorithms')
+algorithm_importer.import_all()
+def algorithm_selection():
+    for i in range(0,len(algorithm_importer.files)):
+        print(str(i) + ") [red] " + algorithm_importer.files[i].info())
+    selected_algorihm = input("Select One : ")
+    selected_algorihm = int(selected_algorihm)
+    if(selected_algorihm > len(algorithm_importer.files)):
+        print("Select exist algorithm")
+        algorithm_selection()
+    return int(selected_algorihm)
 
-#Eger algoritmalar dosyasinda kosullari saglayan dosya varsa implemente edilir
-#Yeni eklenen algoritma dosyasinda run isimli fonksiyon bulunmali 
-#display = console_panel.console_panel()
-def main():
-    global display_manager
-    display_manager = display_manager(main_window.main_window())
-    
-     
-
-main()
+seleced = algorithm_selection()
+selection_window = window(algorithm_importer.files[seleced
+                                                   ])

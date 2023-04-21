@@ -2,6 +2,7 @@ import math
 
 
 dataset = []
+roads = []
 
 def algorithm():
     gap = math.floor(len(dataset) / 2)
@@ -19,6 +20,9 @@ def run(data):
     dataset.extend(data)
     algorithm()
     return dataset
+def get_roads(self):
+    return roads
+
 
 def info():
     return("Shell Sort")

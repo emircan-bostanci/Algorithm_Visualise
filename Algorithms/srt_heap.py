@@ -28,7 +28,7 @@ def algorithm():
         dataset[0] = temp
         heap_size -= 1
         heapify(heap_size,0)
-        roads.append(dataset)
+        roads.append(dataset.copy())
 
 def run(data):
     dataset.extend(data)

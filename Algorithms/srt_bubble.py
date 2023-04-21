@@ -10,7 +10,7 @@ def algorithm(step):
                 tmp = data[i]
                 data[i] = data[j]
                 data[j] = tmp
-                roads.append(data)
+                roads.append(data.copy())
     for i in range(0,len(data)):
         strList += str(data[i])+" "
     data.reverse()
@@ -18,9 +18,10 @@ def algorithm(step):
 def run(dataset):
     data.extend(dataset) 
     algorithm(0)
+    print(roads)
     return data
 def get_roads(self):
-    return roads
+    return self.roads
 
 def info():
     return "Bubble Sort"
