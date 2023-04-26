@@ -17,4 +17,4 @@ def run(data):
     return dataset
 
 def info():
-    return("Insertion Sort")
+    return("(BUG) Insertion Sort")

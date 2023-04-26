@@ -25,4 +25,4 @@ def get_roads(self):
 
 
 def info():
-    return("Shell Sort")
+    return("(BUG) Shell Sort")
